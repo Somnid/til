@@ -1,0 +1,14 @@
+name: Build-Table-Of-Contents
+on: push
+
+jobs:
+  build-toc:
+    name: Build Table of Contents
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
+      - name: Install Deno
+        uses: denolib/setup-deno@v2
+      - name: Build Readme
+        runs: deno run --allow-read --allow-write --unstable build-toc.js
