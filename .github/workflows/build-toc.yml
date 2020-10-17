@@ -1,5 +1,8 @@
 name: Build-Table-Of-Contents
-on: push
+on: 
+  push:
+    paths-ignore:
+      - README.md
 
 jobs:
   build-toc:
@@ -12,3 +15,9 @@ jobs:
         uses: denolib/setup-deno@v2
       - name: Build Readme
         run: deno run --allow-read --allow-write --unstable build-toc.js
+      - name: Git Add
+        run: git add -A
+      - name: Git Commit
+        run: git commit -m "building toc"
+      - name: Git Push
+        run: git push origin

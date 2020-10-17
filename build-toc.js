@@ -16,4 +16,4 @@ const toc = await Deno.readTextFile("table-of-contents.md");
 
 const tocOutput = toc.replace("{{toc}}", tocContent);
 
-await Deno.writeTextFile("readme.md", tocOutput);
+await Deno.writeTextFile("README.md", tocOutput);
