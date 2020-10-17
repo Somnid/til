@@ -11,4 +11,4 @@ jobs:
       - name: Install Deno
         uses: denolib/setup-deno@v2
       - name: Build Readme
-        runs: deno run --allow-read --allow-write --unstable build-toc.js
+        run: deno run --allow-read --allow-write --unstable build-toc.js
