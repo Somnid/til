@@ -16,7 +16,9 @@ jobs:
       - name: Build Readme
         run: deno run --allow-read --allow-write --unstable build-toc.js
       - name: Git Config
-        run: git config user.email "github_bot@bot.com"  user.name "github_bot"
+        run: git config user.email "github_bot@bot.com"
+      - name: Git Config
+        run: git config user.name "github_bot"
       - name: Git Add
         run: git add -A
       - name: Git Commit
